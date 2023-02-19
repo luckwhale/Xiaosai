@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Feb 19 10:56:23 2023
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : filter_3X3
+Top-level Entity Name : filter_3X3
+Family : Cyclone 10 LP
+Device : 10CL006YU256C6G
+Timing Models : Final
+Total logic elements : 84 / 6,272 ( 1 % )
+    Total combinational functions : 2 / 6,272 ( < 1 % )
+    Dedicated logic registers : 84 / 6,272 ( 1 % )
+Total registers : 84
+Total pins : 84 / 177 ( 47 % )
+Total virtual pins : 0
+Total memory bits : 64 / 276,480 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

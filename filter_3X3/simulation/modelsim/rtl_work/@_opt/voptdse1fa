@@ -1,0 +1,71 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Quartus2\filter_3X3\simulation\modelsim
+T_opt
+Vc:z5c]EbI]imW`2HQBCL01
+04 18 4 work filter_3X3_vlg_tst fast 0
+=1-4cd577a9ccf1-63f19009-4f-4178
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver -L rtl_work -L work +acc
+n@_opt
+OL;O;10.1c;51
+vfilter_3X3
+IkNm?[f2<n4[EHnU?4iXC>3
+Vl>mM143mM5XCOmNUhT_Nd1
+Z1 dD:\Quartus2\filter_3X3\simulation\modelsim
+w1676773694
+8D:/Quartus2/filter_3X3/filter_3X3.v
+FD:/Quartus2/filter_3X3/filter_3X3.v
+L0 1
+Z2 OL;L;10.1c;51
+r1
+31
+Z3 o-vlog01compat -work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+nfilter_3@x3
+Z4 !s92 -vlog01compat -work work +incdir+D:/Quartus2/filter_3X3 -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 GQV]WK_bYB5I^M4@Dn:Az0
+!s85 0
+!s108 1676775432.761000
+!s107 D:/Quartus2/filter_3X3/filter_3X3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter_3X3|D:/Quartus2/filter_3X3/filter_3X3.v|
+vfilter_3X3_vlg_tst
+IF8OF5TLa@JCL3Tio_b=U:3
+VZj@hgF]>_VN]i;WQIO]if3
+R1
+w1676774897
+8D:/Quartus2/filter_3X3/simulation/modelsim/filter_3X3.vt
+FD:/Quartus2/filter_3X3/simulation/modelsim/filter_3X3.vt
+L0 2
+R2
+r1
+31
+R3
+nfilter_3@x3_vlg_tst
+!i10b 1
+!s100 Goe:BCNMc;P9A]OWEV=1_3
+!s85 0
+!s108 1676775432.861000
+!s107 D:/Quartus2/filter_3X3/simulation/modelsim/filter_3X3.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter_3X3/simulation/modelsim|D:/Quartus2/filter_3X3/simulation/modelsim/filter_3X3.vt|
+!s92 -vlog01compat -work work +incdir+D:/Quartus2/filter_3X3/simulation/modelsim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vline_shift_ram
+IQS0dlQ^l2:75S8H1:^4i:3
+VYaoeNFR;PKbjDP>dGHGmg3
+R1
+w1676775362
+8D:/Quartus2/filter_3X3/line_shift_ram.v
+FD:/Quartus2/filter_3X3/line_shift_ram.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 =g3_V9]eM0Ih]>WLc5Xeb1
+!s85 0
+!s108 1676775432.812000
+!s107 D:/Quartus2/filter_3X3/line_shift_ram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter_3X3|D:/Quartus2/filter_3X3/line_shift_ram.v|
