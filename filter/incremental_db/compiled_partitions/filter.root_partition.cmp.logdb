@@ -1,0 +1,11 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated|mac_mult1,

@@ -1,0 +1,41 @@
+`timescale 1 ns/ 1 ps
+module floatMult16_vlg_tst();
+
+parameter SLOT = 10;
+reg clk = 0;
+reg [15:0] floatA;
+reg [15:0] floatB;
+reg rst_n = 0;
+                                             
+wire [15:0]  product;
+
+                       
+floatMult16 i1 (
+	.clk(clk),
+	.floatA(floatA),
+	.floatB(floatB),
+	.product(product),
+	.rst_n(rst_n)
+);
+
+initial begin
+	
+	# (SLOT)
+	rst_n = 1;
+	floatA = 16'b0100010000000000;
+	floatB = 16'b0100010100000000;
+
+	// 0.0004125 * 0
+	# (SLOT)
+	floatA = 16'b0000111011000010;
+	floatB = 16'b0000000000000000;
+
+end
+
+always begin
+	# (SLOT/2) 
+	clk = ~clk;
+end                                                
+
+																
+endmodule

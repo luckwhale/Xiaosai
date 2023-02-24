@@ -1,0 +1,30 @@
+`timescale 1 ns / 1 ps
+module floatAdd16_vlg_tst();
+
+parameter SLOT = 10;
+reg [15:0] floatA;
+reg [15:0] floatB;
+wire [15:0] sum;
+
+initial begin
+	# (SLOT)
+	// A + B = 16'h3800 = 0.5
+	floatA = 16'h34CD; // 0.3
+	floatB = 16'h3266; // 0.2
+
+	// A + B = 34CD
+	# (SLOT)
+	floatA = 16'h34CD;
+	floatB = 16'h0000; // 0
+end
+
+
+
+floatAdd16 FADD
+(
+	.floatA(floatA),
+	.floatB(floatB),
+	.sum(sum)
+);
+
+endmodule

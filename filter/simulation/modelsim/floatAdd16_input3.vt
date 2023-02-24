@@ -1,0 +1,48 @@
+`timescale 1 ns/ 1 ps
+module floatAdd16_input3_vlg_tst();
+
+parameter DELAY = 10;
+
+reg clk = 0;
+reg [15:0] floatA;
+reg [15:0] floatB;
+reg [15:0] floatC;
+reg rst_n = 0;
+// wires                                               
+wire [15:0]  sum;
+
+                         
+floatAdd16_input3 i1 (
+	.clk(clk),
+	.floatA(floatA),
+	.floatB(floatB),
+	.floatC(floatC),
+	.rst_n(rst_n),
+	.sum(sum)
+);
+
+
+initial begin
+	#DELAY
+	rst_n = 1'b1;
+	// A + B + C = 16'h3800 = 0.5
+	floatA = 16'h34CD; // 0.3
+	floatB = 16'h3266; // 0.2
+	floatC = 16'h0000; // 0
+
+	// A + B + C = 34CD
+	#DELAY
+	floatA = 16'h34CD;
+	floatB = 16'h0000; // 0
+	floatC = 16'h0000; // 0
+
+end
+
+
+                                                   
+always                                       
+begin                                                  
+#(DELAY/2) clk = ~clk;                                         
+end                                                    
+endmodule
+

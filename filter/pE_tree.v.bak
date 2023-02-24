@@ -1,0 +1,86 @@
+module tree(
+	input clk,
+	input rst_n,
+	output [15 : 0]result
+);
+
+reg [15 : 0] result_reg;
+wire [15:0] mult_w [8:0];
+
+wire [15 : 0] adder_w [2 : 0];
+reg [15:0] num_reg [8:0];
+
+
+genvar i;
+generate
+	for(i = 0; i < 9; i = i + 1)
+	begin: mults
+		mult
+		u_mult(
+			.clk(clk),
+			.rst_n(rst_n),
+			.a(num_reg[i]),
+			.b(num_reg[i]),
+			.result(mult_w[i])
+		);
+	end 
+
+endgenerate
+
+genvar j;
+generate
+	for(j = 0; j < 3; j = j + 1)
+	begin: adders
+		adder
+		u_adder(
+			.clk(clk),
+			.rst_n(rst_n),
+			.a(mult_w[j * 3 + 0]),
+			.b(mult_w[j * 3 + 1]),
+			.c(mult_w[j * 3 + 2]),
+			.result(adder_w[j])
+		);
+	end
+endgenerate
+
+adder
+fin_adder(
+	.clk(clk),
+	.rst_n(rst_n),
+	.a(adder_w[0]),
+	.b(adder_w[1]),
+	.c(adder_w[2]),
+	.result(result)
+);
+
+integer s;
+always@(posedge clk)
+begin
+    if(!rst_n)
+    begin
+        result_reg <= 16'b0;
+        for(s = 0; s < 8; s = s + 1)
+        begin
+            num_reg[s] <= 16'd0;
+        end
+    end
+    else
+    begin
+        
+    end
+end
+
+genvar l;
+generate
+    for(l = 0; l < 9; l = l + 1)
+    begin:nums
+        always@(posedge clk or posedge rst_n)
+        begin
+            if(rst_n)
+                num_reg[l] <= l + 1;
+        end
+    end
+endgenerate
+
+
+endmodule

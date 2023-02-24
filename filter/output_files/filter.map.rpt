@@ -1,0 +1,960 @@
+Analysis & Synthesis report for filter
+Fri Feb 24 10:54:46 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |pE_tree
+ 12. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0
+ 13. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0
+ 14. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0
+ 15. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0
+ 16. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0
+ 17. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0
+ 18. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0
+ 19. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0
+ 20. Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0
+ 21. lpm_mult Parameter Settings by Entity Instance
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Feb 24 10:54:46 2023       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; filter                                      ;
+; Top-level Entity Name              ; pE_tree                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 5,336                                       ;
+;     Total combinational functions  ; 5,336                                       ;
+;     Dedicated logic registers      ; 208                                         ;
+; Total registers                    ; 208                                         ;
+; Total pins                         ; 306                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 18                                          ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; pE_tree            ; filter             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+; floatAdd16.v                     ; yes             ; User Verilog HDL File        ; D:/Quartus2/filter/floatAdd16.v                             ;         ;
+; floatMult16.v                    ; yes             ; User Verilog HDL File        ; D:/Quartus2/filter/floatMult16.v                            ;         ;
+; pE_tree.v                        ; yes             ; User Verilog HDL File        ; D:/Quartus2/filter/pE_tree.v                                ;         ;
+; floatAdd16_input3.v              ; yes             ; User Verilog HDL File        ; D:/Quartus2/filter/floatAdd16_input3.v                      ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/aglobal171.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/quartus2/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_sct.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Quartus2/filter/db/mult_sct.tdf                          ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 5,336     ;
+;                                             ;           ;
+; Total combinational functions               ; 5336      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 3066      ;
+;     -- 3 input functions                    ; 1523      ;
+;     -- <=2 input functions                  ; 747       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 4294      ;
+;     -- arithmetic mode                      ; 1042      ;
+;                                             ;           ;
+; Total registers                             ; 208       ;
+;     -- Dedicated logic registers            ; 208       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 306       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 18        ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 208       ;
+; Total fan-out                               ; 18511     ;
+; Average fan-out                             ; 3.00      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                    ;
++------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                                             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name       ; Library Name ;
++------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |pE_tree                                                               ; 5336 (0)            ; 208 (0)                   ; 0           ; 18           ; 0       ; 9         ; 306  ; 0            ; |pE_tree                                                                                        ; pE_tree           ; work         ;
+;    |floatAdd16_input3:floatAdd16_input3_level1|                        ; 884 (33)            ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1                                             ; floatAdd16_input3 ; work         ;
+;       |floatAdd16:add1|                                                ; 451 (451)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1                             ; floatAdd16        ; work         ;
+;       |floatAdd16:add2|                                                ; 400 (400)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2                             ; floatAdd16        ; work         ;
+;    |floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3| ; 885 (35)            ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3                      ; floatAdd16_input3 ; work         ;
+;       |floatAdd16:add1|                                                ; 454 (454)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1      ; floatAdd16        ; work         ;
+;       |floatAdd16:add2|                                                ; 396 (396)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2      ; floatAdd16        ; work         ;
+;    |floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3| ; 870 (31)            ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3                      ; floatAdd16_input3 ; work         ;
+;       |floatAdd16:add1|                                                ; 446 (446)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1      ; floatAdd16        ; work         ;
+;       |floatAdd16:add2|                                                ; 393 (393)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2      ; floatAdd16        ; work         ;
+;    |floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3| ; 888 (35)            ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3                      ; floatAdd16_input3 ; work         ;
+;       |floatAdd16:add1|                                                ; 456 (456)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1      ; floatAdd16        ; work         ;
+;       |floatAdd16:add2|                                                ; 397 (397)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2      ; floatAdd16        ; work         ;
+;    |floatMult16:floatMult16_level3[0].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[0].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[1].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[1].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[2].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[2].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[3].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[3].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[4].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[4].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[5].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[5].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[6].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[6].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[7].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[7].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
+;    |floatMult16:floatMult16_level3[8].u_floatMult16|                   ; 201 (201)           ; 16 (16)                   ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[8].u_floatMult16                                        ; floatMult16       ; work         ;
+;       |lpm_mult:Mult0|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0                         ; lpm_mult          ; work         ;
+;          |mult_sct:auto_generated|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |pE_tree|floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0|mult_sct:auto_generated ; mult_sct          ; work         ;
++------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 9           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 18          ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 9           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 208   ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 83    ;
+; Number of registers using Asynchronous Clear ; 208   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[8].u_floatMult16|product[13]                                 ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[6].u_floatMult16|product[14]                                 ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[7].u_floatMult16|product[13]                                 ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[2].u_floatMult16|product[14]                                 ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[0].u_floatMult16|product[7]                                  ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[1].u_floatMult16|product[9]                                  ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[5].u_floatMult16|product[3]                                  ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[3].u_floatMult16|product[8]                                  ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |pE_tree|floatMult16:floatMult16_level3[4].u_floatMult16|product[8]                                  ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; Yes        ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|sum[13]                                          ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; Yes        ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|sum[13]                   ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; Yes        ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|sum[14]                   ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; Yes        ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|sum[14]                   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionB                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionA                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionB                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionA                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionB                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionA                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionB                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionA                        ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionB                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|fractionA                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionB                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add2|fractionA                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|fractionA ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionB ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add2|fractionA ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level1|floatAdd16:add1|sum[13]                          ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[2].u_floatAdd16_input3|floatAdd16:add1|sum[14]   ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1|sum[14]   ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 18 LEs               ; 4 LEs                  ; No         ; |pE_tree|floatAdd16_input3:floatAdd16_input3_level2[1].u_floatAdd16_input3|floatAdd16:add1|sum[14]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |pE_tree ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                                 ;
+; F              ; 3     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                            ;
++------------------------------------------------+--------------+-------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                  ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                                         ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                                         ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                         ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                         ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                         ;
+; LATENCY                                        ; 0            ; Untyped                                         ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                         ;
+; USE_EAB                                        ; OFF          ; Untyped                                         ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                                         ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                         ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                         ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                             ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                         ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                         ;
+; CBXI_PARAMETER                                 ; mult_sct     ; Untyped                                         ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                         ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                         ;
++------------------------------------------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                         ;
++---------------------------------------+----------------------------------------------------------------+
+; Name                                  ; Value                                                          ;
++---------------------------------------+----------------------------------------------------------------+
+; Number of entity instances            ; 9                                                              ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[6].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[7].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[2].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[0].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[1].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[5].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[3].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
+; Entity Instance                       ; floatMult16:floatMult16_level3[4].u_floatMult16|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 11                                                             ;
+;     -- LPM_WIDTHB                     ; 11                                                             ;
+;     -- LPM_WIDTHP                     ; 22                                                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                             ;
+;     -- USE_EAB                        ; OFF                                                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                             ;
++---------------------------------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 306                         ;
+; cycloneiii_ff         ; 208                         ;
+;     CLR               ; 125                         ;
+;     CLR SCLR SLD      ; 27                          ;
+;     CLR SLD           ; 56                          ;
+; cycloneiii_lcell_comb ; 5336                        ;
+;     arith             ; 1042                        ;
+;         2 data inputs ; 365                         ;
+;         3 data inputs ; 677                         ;
+;     normal            ; 4294                        ;
+;         0 data inputs ; 97                          ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 277                         ;
+;         3 data inputs ; 846                         ;
+;         4 data inputs ; 3066                        ;
+; cycloneiii_mac_mult   ; 9                           ;
+; cycloneiii_mac_out    ; 9                           ;
+;                       ;                             ;
+; Max LUT depth         ; 39.00                       ;
+; Average LUT depth     ; 23.87                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:20     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Fri Feb 24 10:54:16 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off filter -c filter
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file floatadd16.v
+    Info (12023): Found entity 1: floatAdd16 File: D:/Quartus2/filter/floatAdd16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file floatmult16.v
+    Info (12023): Found entity 1: floatMult16 File: D:/Quartus2/filter/floatMult16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file convunit_by_shift.v
+    Info (12023): Found entity 1: convUnit_by_shift File: D:/Quartus2/filter/convUnit_by_shift.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file line_shift_ram.v
+    Info (12023): Found entity 1: line_shift_ram File: D:/Quartus2/filter/line_shift_ram.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file pe_tree.v
+    Info (12023): Found entity 1: pE_tree File: D:/Quartus2/filter/pE_tree.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_ram.v
+    Info (12023): Found entity 1: shift_ram File: D:/Quartus2/filter/shift_ram.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file floatadd16_input3.v
+    Info (12023): Found entity 1: floatAdd16_input3 File: D:/Quartus2/filter/floatAdd16_input3.v Line: 1
+Info (12127): Elaborating entity "pE_tree" for the top level hierarchy
+Info (12128): Elaborating entity "floatMult16" for hierarchy "floatMult16:floatMult16_level3[0].u_floatMult16" File: D:/Quartus2/filter/pE_tree.v Line: 34
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(35): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 35
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(38): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 38
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(41): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 41
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(44): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 44
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(47): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 47
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(50): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 50
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(53): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 53
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(56): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 56
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(59): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 59
+Warning (10230): Verilog HDL assignment warning at floatMult16.v(62): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatMult16.v Line: 62
+Info (12128): Elaborating entity "floatAdd16_input3" for hierarchy "floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3" File: D:/Quartus2/filter/pE_tree.v Line: 51
+Info (12128): Elaborating entity "floatAdd16" for hierarchy "floatAdd16_input3:floatAdd16_input3_level2[0].u_floatAdd16_input3|floatAdd16:add1" File: D:/Quartus2/filter/floatAdd16_input3.v Line: 15
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(42): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 42
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(60): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 60
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(63): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 63
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(66): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 66
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(69): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 69
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(72): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 72
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(75): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 75
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(78): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 78
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(81): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 81
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(84): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 84
+Warning (10230): Verilog HDL assignment warning at floatAdd16.v(87): truncated value with size 32 to match size of target (6) File: D:/Quartus2/filter/floatAdd16.v Line: 87
+Warning (10240): Verilog HDL Always Construct warning at floatAdd16.v(14): inferring latch(es) for variable "shiftAmount", which holds its previous value in one or more paths through the always construct File: D:/Quartus2/filter/floatAdd16.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at floatAdd16.v(14): inferring latch(es) for variable "cout", which holds its previous value in one or more paths through the always construct File: D:/Quartus2/filter/floatAdd16.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at floatAdd16.v(14): inferring latch(es) for variable "fraction", which holds its previous value in one or more paths through the always construct File: D:/Quartus2/filter/floatAdd16.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at floatAdd16.v(14): inferring latch(es) for variable "sign", which holds its previous value in one or more paths through the always construct File: D:/Quartus2/filter/floatAdd16.v Line: 14
+Warning (10240): Verilog HDL Always Construct warning at floatAdd16.v(14): inferring latch(es) for variable "mantissa", which holds its previous value in one or more paths through the always construct File: D:/Quartus2/filter/floatAdd16.v Line: 14
+Info (278001): Inferred 9 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[8].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[6].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[7].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[2].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[0].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[1].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[5].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[3].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "floatMult16:floatMult16_level3[4].u_floatMult16|Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+Info (12130): Elaborated megafunction instantiation "floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0" File: D:/Quartus2/filter/floatMult16.v Line: 31
+Info (12133): Instantiated megafunction "floatMult16:floatMult16_level3[8].u_floatMult16|lpm_mult:Mult0" with the following parameter: File: D:/Quartus2/filter/floatMult16.v Line: 31
+    Info (12134): Parameter "LPM_WIDTHA" = "11"
+    Info (12134): Parameter "LPM_WIDTHB" = "11"
+    Info (12134): Parameter "LPM_WIDTHP" = "22"
+    Info (12134): Parameter "LPM_WIDTHR" = "22"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_sct.tdf
+    Info (12023): Found entity 1: mult_sct File: D:/Quartus2/filter/db/mult_sct.tdf Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/Quartus2/filter/output_files/filter.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 5660 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 290 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 5336 logic cells
+    Info (21062): Implemented 18 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4875 megabytes
+    Info: Processing ended: Fri Feb 24 10:54:46 2023
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Quartus2/filter/output_files/filter.map.smsg.
+
+

@@ -1,0 +1,155 @@
+Flow report for filter
+Fri Feb 24 10:55:33 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Fri Feb 24 10:55:33 2023       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; filter                                      ;
+; Top-level Entity Name              ; pE_tree                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 5,349 / 15,408 ( 35 % )                     ;
+;     Total combinational functions  ; 5,336 / 15,408 ( 35 % )                     ;
+;     Dedicated logic registers      ; 208 / 15,408 ( 1 % )                        ;
+; Total registers                    ; 208                                         ;
+; Total pins                         ; 306 / 344 ( 89 % )                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0 / 516,096 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 18 / 112 ( 16 % )                           ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; Device                             ; EP4CE15F23C6                                ;
+; Timing Models                      ; Final                                       ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/24/2023 10:54:17 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; filter              ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                          ;
++--------------------------------------+------------------------------------------+---------------+-------------+---------------------------+
+; Assignment Name                      ; Value                                    ; Default Value ; Entity Name ; Section Id                ;
++--------------------------------------+------------------------------------------+---------------+-------------+---------------------------+
+; COMPILER_SIGNATURE_ID                ; 1096545415723.167720725716776            ; --            ; --          ; --                        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; floatAdd16_input3_vlg_tst ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; pE_tree_vlg_tst           ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; floatMult16_vlg_tst       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; floatAdd16_vlg_tst        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                       ; --            ; --          ; convUnit_by_shift_vlg_tst ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; floatAdd16_input3_vlg_tst                ; --            ; --          ; eda_simulation            ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                              ; --            ; --          ; eda_simulation            ;
+; EDA_SIMULATION_TOOL                  ; ModelSim (Verilog)                       ; <None>        ; --          ; --                        ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                          ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/floatAdd16_input3.vt ; --            ; --          ; floatAdd16_input3_vlg_tst ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/pE_tree.vt           ; --            ; --          ; pE_tree_vlg_tst           ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/floatMult16.vt       ; --            ; --          ; floatMult16_vlg_tst       ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/floatAdd16.vt        ; --            ; --          ; floatAdd16_vlg_tst        ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/convUnit_by_shift.vt ; --            ; --          ; convUnit_by_shift_vlg_tst ;
+; EDA_TEST_BENCH_MODULE_NAME           ; floatAdd16_input3_vlg_tst                ; --            ; --          ; floatAdd16_input3_vlg_tst ;
+; EDA_TEST_BENCH_MODULE_NAME           ; pE_tree_vlg_tst                          ; --            ; --          ; pE_tree_vlg_tst           ;
+; EDA_TEST_BENCH_MODULE_NAME           ; floatMult16_vlg_tst                      ; --            ; --          ; floatMult16_vlg_tst       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; floatAdd16_vlg_tst                       ; --            ; --          ; floatAdd16_vlg_tst        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; convUnit_by_shift_vlg_tst                ; --            ; --          ; convUnit_by_shift_vlg_tst ;
+; EDA_TEST_BENCH_NAME                  ; convUnit_by_shift_vlg_tst                ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; floatAdd16_vlg_tst                       ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; floatMult16_vlg_tst                      ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; floatAdd16_input3_vlg_tst                ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; pE_tree_vlg_tst                          ; --            ; --          ; eda_simulation            ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 200 ns                                   ; --            ; --          ; floatAdd16_input3_vlg_tst ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 300 ns                                   ; --            ; --          ; pE_tree_vlg_tst           ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                                   ; --            ; --          ; floatMult16_vlg_tst       ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                                   ; --            ; --          ; floatAdd16_vlg_tst        ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 10000 ns                                 ; --            ; --          ; convUnit_by_shift_vlg_tst ;
+; EDA_TIME_SCALE                       ; 1 ps                                     ; --            ; --          ; eda_simulation            ;
+; MISC_FILE                            ; line_shift_ram_bb.v                      ; --            ; --          ; --                        ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)   ; --            ; pE_tree     ; Top                       ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)   ; --            ; pE_tree     ; Top                       ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)   ; --            ; pE_tree     ; Top                       ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                             ; --            ; --          ; --                        ;
+; TOP_LEVEL_ENTITY                     ; pE_tree                                  ; filter        ; --          ; --                        ;
++--------------------------------------+------------------------------------------+---------------+-------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:30     ; 1.0                     ; 4875 MB             ; 00:00:41                           ;
+; Fitter                    ; 00:00:32     ; 1.2                     ; 6168 MB             ; 00:01:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4700 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.9                     ; 4928 MB             ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 4707 MB             ; 00:00:06                           ;
+; Total                     ; 00:01:12     ; --                      ; --                  ; 00:02:02                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; LAPTOP-8DM078JL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; LAPTOP-8DM078JL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; LAPTOP-8DM078JL  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; LAPTOP-8DM078JL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; LAPTOP-8DM078JL  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off filter -c filter
+quartus_fit --read_settings_files=off --write_settings_files=off filter -c filter
+quartus_asm --read_settings_files=off --write_settings_files=off filter -c filter
+quartus_sta filter -c filter
+quartus_eda --read_settings_files=off --write_settings_files=off filter -c filter
+
+
+
