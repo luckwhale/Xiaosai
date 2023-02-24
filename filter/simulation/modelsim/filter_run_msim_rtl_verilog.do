@@ -35,14 +35,17 @@ vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/floatAdd16.v}
 vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/floatMult16.v}
+vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/convUnit_by_shift.v}
+vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/line_shift_ram.v}
 vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/pE_tree.v}
+vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/shift_ram.v}
 vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/floatAdd16_input3.v}
 
-vlog -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim {D:/Quartus2/filter/simulation/modelsim/pE_tree.vt}
+vlog -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim {D:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  pE_tree_vlg_tst
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  convUnit_by_shift_vlg_tst
 
 add wave *
 view structure
 view signals
-run 300 ns
+run 10000 ns

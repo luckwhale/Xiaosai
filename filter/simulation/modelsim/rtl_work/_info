@@ -4,30 +4,70 @@ K3
 cModel Technology
 Z0 dD:\Quartus2\filter\simulation\modelsim
 T_opt
-V:iBM>bm:O6EXFJF_nFPbb3
-04 15 4 work pE_tree_vlg_tst fast 0
-=1-4cd577a9ccf1-63f8283a-154-2310
+Vhf8PQz2eNACmlYAnPWjG`3
+04 25 4 work convUnit_by_shift_vlg_tst fast 0
+=1-4cd577a9ccf1-63f89f8e-199-12e4
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work +acc
 n@_opt
 OL;O;10.1c;51
-vfloatAdd16
-I0?Wcd^Cf_I4=Wajh1Z34[0
-VU^A>]5a630iU0fQRnGNA70
+vconvUnit_by_shift
+I9mSl6O<YJL6^ec@EU39]h0
+VRYOUO4AWk?2=LLV<k;S]<3
 Z1 dD:\Quartus2\filter\simulation\modelsim
-w1677154547
-8D:/Quartus2/filter/floatAdd16.v
-FD:/Quartus2/filter/floatAdd16.v
+w1677237891
+8D:/Quartus2/filter/convUnit_by_shift.v
+FD:/Quartus2/filter/convUnit_by_shift.v
 L0 1
 Z2 OL;L;10.1c;51
 r1
 31
 Z3 o-vlog01compat -work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
-nfloat@add16
 Z4 !s92 -vlog01compat -work work +incdir+D:/Quartus2/filter -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+nconv@unit_by_shift
+!i10b 1
+!s100 ;ScghXM>6Cc8_i[=^96:h1
+!s85 0
+!s108 1677238157.969000
+!s107 D:/Quartus2/filter/convUnit_by_shift.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/convUnit_by_shift.v|
+vconvUnit_by_shift_vlg_tst
+IkMG_5m_Ah]jOJIWMlIiQh1
+VWUR;mRNG_0mTHGESP2P`W2
+R1
+w1677235627
+8D:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt
+FD:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt
+L0 2
+R2
+r1
+31
+R3
+nconv@unit_by_shift_vlg_tst
+!i10b 1
+!s100 bDEV]@S?C^bS9o9a?6^Xz0
+!s85 0
+!s108 1677238158.209000
+!s107 D:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter/simulation/modelsim|D:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt|
+!s92 -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vfloatAdd16
+I0?Wcd^Cf_I4=Wajh1Z34[0
+VU^A>]5a630iU0fQRnGNA70
+R1
+w1677154547
+8D:/Quartus2/filter/floatAdd16.v
+FD:/Quartus2/filter/floatAdd16.v
+L0 1
+R2
+r1
+31
+R3
+nfloat@add16
+R4
 !i10b 1
 !s100 RS?:cdL[BG;<2M6c:34MZ1
 !s85 0
-!s108 1677207609.900000
+!s108 1677238157.879000
 !s107 D:/Quartus2/filter/floatAdd16.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/floatAdd16.v|
 vfloatAdd16_input3
@@ -47,7 +87,7 @@ nfloat@add16_input3
 !i10b 1
 !s100 Fk@cdEh=J270P^io5A_3T0
 !s85 0
-!s108 1677207610.050000
+!s108 1677238158.159000
 !s107 D:/Quartus2/filter/floatAdd16_input3.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/floatAdd16_input3.v|
 vfloatMult16
@@ -67,9 +107,28 @@ nfloat@mult16
 !i10b 1
 !s100 B>XgN4kDIRK;9?fjAC=Mb1
 !s85 0
-!s108 1677207609.950000
+!s108 1677238157.929000
 !s107 D:/Quartus2/filter/floatMult16.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/floatMult16.v|
+vline_shift_ram
+IYjF@CUIKc^0hRd>e:Se[>2
+VLCC;65^KSKC`C:_?5f7113
+R1
+w1677156377
+8D:/Quartus2/filter/line_shift_ram.v
+FD:/Quartus2/filter/line_shift_ram.v
+L0 39
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 5N=B3iI_OaW6XRQVMj2PG1
+!s85 0
+!s108 1677238158.019000
+!s107 D:/Quartus2/filter/line_shift_ram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/line_shift_ram.v|
 vpE_tree
 IVD=<eUJQaj3W1[2`fbfBH3
 VD=`fLcRLV;aXmE]6R9i5h3
@@ -87,26 +146,25 @@ np@e_tree
 !i10b 1
 !s100 :[n>1fjP5gg<PK3`oOV]73
 !s85 0
-!s108 1677207610.000000
+!s108 1677238158.069000
 !s107 D:/Quartus2/filter/pE_tree.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/pE_tree.v|
-vpE_tree_vlg_tst
-I3OPEmN7U[WM;]EY3D64U<0
-VDNIeARJnSjc;W?8Pcd`?J1
+vshift_ram
+I2I??39:=EbjR5@4EK@g:Q2
+V[U_U80GZ214o;L<G>Bf_K1
 R1
-w1677207595
-8D:/Quartus2/filter/simulation/modelsim/pE_tree.vt
-FD:/Quartus2/filter/simulation/modelsim/pE_tree.vt
-L0 2
+w1677233937
+8D:/Quartus2/filter/shift_ram.v
+FD:/Quartus2/filter/shift_ram.v
+L0 1
 R2
 r1
 31
 R3
-np@e_tree_vlg_tst
+R4
 !i10b 1
-!s100 ObnaiLBL?PeR;S54EFF:13
+!s100 QzcEomLeOkKQTA0DmjE?I2
 !s85 0
-!s108 1677207610.100000
-!s107 D:/Quartus2/filter/simulation/modelsim/pE_tree.vt|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter/simulation/modelsim|D:/Quartus2/filter/simulation/modelsim/pE_tree.vt|
-!s92 -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s108 1677238158.119000
+!s107 D:/Quartus2/filter/shift_ram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus2/filter|D:/Quartus2/filter/shift_ram.v|

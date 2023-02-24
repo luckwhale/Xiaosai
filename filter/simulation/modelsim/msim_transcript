@@ -550,12 +550,30 @@
 # 
 # Top level modules:
 # 	floatMult16
+# vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/convUnit_by_shift.v}
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module convUnit_by_shift
+# 
+# Top level modules:
+# 	convUnit_by_shift
+# vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/line_shift_ram.v}
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module line_shift_ram
+# 
+# Top level modules:
+# 	line_shift_ram
 # vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/pE_tree.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module pE_tree
 # 
 # Top level modules:
 # 	pE_tree
+# vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/shift_ram.v}
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module shift_ram
+# 
+# Top level modules:
+# 	shift_ram
 # vlog -vlog01compat -work work +incdir+D:/Quartus2/filter {D:/Quartus2/filter/floatAdd16_input3.v}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
 # -- Compiling module floatAdd16_input3
@@ -563,26 +581,22 @@
 # Top level modules:
 # 	floatAdd16_input3
 # 
-# vlog -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim {D:/Quartus2/filter/simulation/modelsim/pE_tree.vt}
+# vlog -vlog01compat -work work +incdir+D:/Quartus2/filter/simulation/modelsim {D:/Quartus2/filter/simulation/modelsim/convUnit_by_shift.vt}
 # Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
-# -- Compiling module pE_tree_vlg_tst
-# ** Warning: D:/Quartus2/filter/simulation/modelsim/pE_tree.vt(24): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# ** Warning: D:/Quartus2/filter/simulation/modelsim/pE_tree.vt(25): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# ** Warning: D:/Quartus2/filter/simulation/modelsim/pE_tree.vt(29): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
-# ** Warning: D:/Quartus2/filter/simulation/modelsim/pE_tree.vt(30): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-# 
+# -- Compiling module convUnit_by_shift_vlg_tst
 # 
 # Top level modules:
-# 	pE_tree_vlg_tst
+# 	convUnit_by_shift_vlg_tst
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  pE_tree_vlg_tst
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps pE_tree_vlg_tst 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  convUnit_by_shift_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps convUnit_by_shift_vlg_tst 
 # ** Note: (vsim-3812) Design is being optimized...
 # 
-# Loading work.pE_tree_vlg_tst(fast)
+# Loading work.convUnit_by_shift_vlg_tst(fast)
+# Loading work.convUnit_by_shift(fast)
+# Loading work.shift_ram(fast)
+# Loading work.line_shift_ram(fast)
+# Loading altera_mf_ver.altshift_taps(fast)
 # Loading work.pE_tree(fast)
 # Loading work.floatMult16(fast)
 # Loading work.floatAdd16_input3(fast)
@@ -594,4 +608,4 @@
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 300 ns
+# run 10000 ns

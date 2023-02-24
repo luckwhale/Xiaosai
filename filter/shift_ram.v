@@ -1,4 +1,9 @@
 module shift_ram
+#(
+		parameter DATA_WIDTH = 16,  //数据宽度，float16
+		parameter F = 3, //卷积核大小
+		parameter IMG_WIDTH = 8
+)
 (
     input clk,
     input rst_n,
@@ -7,12 +12,16 @@ module shift_ram
     input [DATA_WIDTH-1:0] iData,
 
     output reg oValid,
+	 
+	 //测试使用
+//	   output reg [DATA_WIDTH-1:0] oData_11, oData_12, oData_13,
+//    output reg [DATA_WIDTH-1:0] oData_21, oData_22, oData_23,
+//    output reg [DATA_WIDTH-1:0] oData_31, oData_32, oData_33,
+	 
     output [DATA_WIDTH*F*F-1:0]oData
 );
 
- parameter DATA_WIDTH = 16;  //数据宽度，float16
- parameter F = 3; //卷积核大小
- parameter IMG_WIDTH = 8;
+
 
 	 //存储的中间变量
     reg  [DATA_WIDTH-1:0] row3_data;
@@ -65,8 +74,8 @@ module shift_ram
             Valid_shift <=  16'b0;
 				oValid = 1'b0;
 			end
-        else if (Valid_shift<IMG_WIDTH*2)
-            Valid_shift <= Valid_shift+1;
+        else if (Valid_shift<IMG_WIDTH*2+F)
+            Valid_shift <= Valid_shift+iValid;
 		  else 
 				oValid <= 1'b1;
     end

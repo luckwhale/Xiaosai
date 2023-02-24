@@ -13,18 +13,31 @@ module convUnit_by_shift
 	 input [DATA_WIDTH-1:0] iData2,
 	 input [DATA_WIDTH-1:0] iData3,
 	 
-	 input [DATA_WIDTH*F*F*D-1:0] param,
+	 input [DATA_WIDTH*F*F-1:0] param1,
+	 input [DATA_WIDTH*F*F-1:0] param2,
+	 input [DATA_WIDTH*F*F-1:0] param3,
+	 
 
-    output [D-1:0] oValid,
+    output reg oValid,
     output [DATA_WIDTH-1:0] result
 );
 
 wire [DATA_WIDTH*F*F-1:0] oData [D-1:0];
+wire [DATA_WIDTH*F*F-1:0] param [D-1:0];
 wire [DATA_WIDTH-1:0] temp_result [D-1:0];
 wire [DATA_WIDTH-1:0] iData [D-1:0];
+
+reg [15:0] counter;
+wire [D-1:0] oValid_temp;
+
 assign iData[0] = iData1;
 assign iData[1] = iData2;
 assign iData[2] = iData3;
+
+assign param[0] = param1;
+assign param[1] = param2;
+assign param[2] = param3;
+
 
 genvar j;
 generate
@@ -38,7 +51,7 @@ generate
 				.iValid(iValid),
 				.iData(iData[j]),
 			
-				.oValid(oValid[j]),
+				.oValid(oValid_temp[j]),
 				.oData(oData[j])
 		);
 	end
@@ -71,6 +84,17 @@ floatAdd16_input3
 			.floatC(temp_result[2]),
 			.sum(result)
 		);
+		
+    // oVaild
+    always @(posedge clk, negedge rst_n) begin
+        if(!rst_n) begin
+            counter <=  16'b0;
+				oValid  <=  0;
+			end
+        else if (oValid_temp[0]==1&&oValid_temp[1]==1&&oValid_temp[2]==1&&counter<3) 
+            counter <= counter + 1;
+		  else if (counter>=3)
+				oValid <=   1;
 
-	 
+	 end
 endmodule

@@ -1,0 +1,70 @@
+`timescale 1 ns/ 1 ps
+module shift_ram_vlg_tst();
+
+parameter DELAY = 10;
+
+reg clk = 0;
+reg [15:0] iData;
+reg iValid = 0;
+reg rst_n = 0;
+                                            
+wire [143:0]  oData;
+wire oValid;
+
+    wire [15:0] oData_11;
+    wire [15:0] oData_12;
+    wire [15:0] oData_13;
+    wire [15:0] oData_21;
+    wire [15:0] oData_22;
+    wire [15:0] oData_23;
+    wire [15:0] oData_31;
+    wire [15:0] oData_32;
+    wire [15:0] oData_33;
+
+                       
+shift_ram i1 (
+	.clk(clk),
+	.iData(iData),
+	.iValid(iValid),
+	.oData(oData),
+	.oData_11 (oData_11),
+   .oData_12 (oData_12),
+   .oData_13 (oData_13),
+   .oData_21 (oData_21),
+   .oData_22 (oData_22),
+   .oData_23 (oData_23),
+   .oData_31 (oData_31),
+   .oData_32 (oData_32),
+   .oData_33 (oData_33),
+	.oValid(oValid),
+	.rst_n(rst_n)
+);
+
+initial                                                
+begin                                                  
+		#(DELAY) rst_n <= 1'b1;
+		#(DELAY)	iValid <= 1'b1;
+
+      // 第一行数据
+      repeat(8) begin
+          iData <= $random;
+          #DELAY;
+      end
+      // 第二行数据
+      repeat(8) begin
+          iData <= $random;
+          #DELAY;
+      end
+      // 第三行数据
+      repeat(8) begin
+          iData <= $random;
+          #DELAY;
+      end
+end       
+
+                                             
+always  #(DELAY/2) clk = ~clk;                                       
+
+                                               
+endmodule
+

@@ -1,2 +1,2 @@
 Warning (10268): Verilog HDL information at floatMult16.v(16): always construct contains both blocking and non-blocking assignments File: D:/Quartus2/filter/floatMult16.v Line: 16
-Warning (10268): Verilog HDL information at shift_ram.v(63): always construct contains both blocking and non-blocking assignments File: D:/Quartus2/filter/shift_ram.v Line: 63
+Warning (10268): Verilog HDL information at shift_ram.v(72): always construct contains both blocking and non-blocking assignments File: D:/Quartus2/filter/shift_ram.v Line: 72
